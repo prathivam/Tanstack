@@ -13,6 +13,8 @@ export function Posts() {
   const {data, isError, error, isLoading} = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
+    // staleTime means till that time the data is fresh until then
+    staleTime: 2000
   });
   if (isLoading) {
     return <h3>Loading.. Still</h3>
